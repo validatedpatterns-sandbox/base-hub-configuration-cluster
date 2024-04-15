@@ -7,11 +7,11 @@ clusterGroup:
     - config-demo
     - hello-world
   subscriptions:
-    acm:
-      name: advanced-cluster-management
-      namespace: open-cluster-management
-      channel: release-2.10
-      #csv: advanced-cluster-management.v2.6.1
+    #    acm:
+    #      name: advanced-cluster-management
+    #      namespace: open-cluster-management
+    #      channel: release-2.10
+    #      #csv: advanced-cluster-management.v2.6.1
   projects:
     - hub
     - config-demo
