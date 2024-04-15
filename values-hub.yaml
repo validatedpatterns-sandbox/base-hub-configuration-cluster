@@ -75,7 +75,7 @@ clusterGroup:
       namespace: policies
       project: base-cluster-config
       kustomize: true
-      path: kustomize/components/rhacm/policies
+      path: kustomize/components/rhacm/operator/appSubscription
 
   imperative:
     # NOTE: We *must* use lists and not hashes. As hashes lose ordering once parsed by helm
