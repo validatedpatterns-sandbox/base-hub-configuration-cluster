@@ -17,6 +17,7 @@ clusterGroup:
     - hub
     - config-demo
     - hello-world
+    - base-cluster-config
   # Explicitly mention the cluster-state based overrides we plan to use for this pattern.
   # We can use self-referential variables because the chart calls the tpl function with these variables defined
   sharedValueFiles:
@@ -68,6 +69,14 @@ clusterGroup:
       namespace: hello-world
       project: hello-world
       path: charts/all/hello-world
+
+    rhacm-policies:
+      name: rhacm-policies
+      namespace: policies
+      project: base-cluster-config
+      kustomize: true
+      path: kustomize/components/rhacm/polcies
+
   imperative:
     # NOTE: We *must* use lists and not hashes. As hashes lose ordering once parsed by helm
     # The default schedule is every 10 minutes: imperative.schedule
