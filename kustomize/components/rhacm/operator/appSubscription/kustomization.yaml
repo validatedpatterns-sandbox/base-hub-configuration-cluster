@@ -11,3 +11,4 @@ resources:
 - subscription.yaml
 - placement.yaml
 - managedClusterSetBinding.yaml
+- subscriptionAdminCRB.yaml
