@@ -9,8 +9,8 @@ clusterGroup:
     - hello-world
     - aap
     - rhacs-operator:
-      operatorGroup: true
-      targetNamespaces: null
+        operatorGroup: true
+        targetNamespaces: null
 
   subscriptions:
     acm:
