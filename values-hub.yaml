@@ -20,7 +20,7 @@ clusterGroup:
       name: rhacs-operator
       namespace: rhacs-operator
     aap:
-      name: ansible-automation-platform
+      name: ansible-automation-platform-operator
       namespace: aap
       channel: stable-2.4-cluster-scoped
   projects:
