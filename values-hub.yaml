@@ -7,6 +7,9 @@ clusterGroup:
     - golang-external-secrets
     - config-demo
     - hello-world
+    - aap
+    - rhacs-operator
+
   subscriptions:
     acm:
       name: advanced-cluster-management
