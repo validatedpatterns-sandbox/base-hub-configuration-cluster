@@ -8,7 +8,9 @@ clusterGroup:
     - config-demo
     - hello-world
     - aap
-    - rhacs-operator
+    - rhacs-operator:
+      operatorGroup: true
+      targetNamespaces: null
 
   subscriptions:
     acm:
