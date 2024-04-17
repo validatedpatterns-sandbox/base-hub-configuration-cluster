@@ -13,6 +13,13 @@ clusterGroup:
       namespace: open-cluster-management
       channel: release-2.10
       #csv: advanced-cluster-management.v2.6.1
+    acs:
+      name: rhacs-operator
+      namespace: rhacs-operator
+    aap:
+      name: ansible-automation-platform
+      namespace: aap
+      channel: stable-2.4-cluster-scoped
   projects:
     - hub
     - config-demo
@@ -69,13 +76,21 @@ clusterGroup:
       namespace: hello-world
       project: hello-world
       path: charts/all/hello-world
-
-    rhacm-policies:
-      name: rhacm-policies
-      namespace: policies
+    acs-central:
+      name: acs-central
+      namespace: rhacs-operator
       project: base-cluster-config
-      kustomize: true
-      path: kustomize/components/rhacm/operator/appSubscription
+      path: charts/hub/acs/central
+    acs-secured:
+      name: acs-secured
+      namespace: rhacs-operator
+      project: base-cluster-config
+      path: charts/hub/acs/secured-cluster
+    aap-controller:
+      name: aap-controller
+      namespace: aap
+      project: base-cluster-config
+      path: charts/hub/aap/controller
 
   imperative:
     # NOTE: We *must* use lists and not hashes. As hashes lose ordering once parsed by helm
