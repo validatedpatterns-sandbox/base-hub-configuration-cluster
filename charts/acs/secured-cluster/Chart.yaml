@@ -1,0 +1,6 @@
+apiVersion: v2
+description: A Helm chart to configure Advanced Cluster Security SecuredCluster for OpenShift
+keywords:
+- pattern
+name: acs-secured-cluster
+version: 0.0.1
