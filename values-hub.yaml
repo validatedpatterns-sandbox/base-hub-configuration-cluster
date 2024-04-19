@@ -7,16 +7,29 @@ clusterGroup:
     - golang-external-secrets
     - config-demo
     - hello-world
+    - aap
+    - rhacs-operator:
+        operatorGroup: true
+        targetNamespaces: null
+
   subscriptions:
     acm:
       name: advanced-cluster-management
       namespace: open-cluster-management
       channel: release-2.10
       #csv: advanced-cluster-management.v2.6.1
+    acs:
+      name: rhacs-operator
+      namespace: rhacs-operator
+    aap:
+      name: ansible-automation-platform-operator
+      namespace: aap
+      channel: stable-2.4-cluster-scoped
   projects:
     - hub
     - config-demo
     - hello-world
+    - base-cluster-config
   # Explicitly mention the cluster-state based overrides we plan to use for this pattern.
   # We can use self-referential variables because the chart calls the tpl function with these variables defined
   sharedValueFiles:
@@ -68,6 +81,22 @@ clusterGroup:
       namespace: hello-world
       project: hello-world
       path: charts/all/hello-world
+    acs-central:
+      name: acs-central
+      namespace: rhacs-operator
+      project: base-cluster-config
+      path: charts/hub/acs/central
+    acs-secured:
+      name: acs-secured
+      namespace: rhacs-operator
+      project: base-cluster-config
+      path: charts/hub/acs/secured-cluster
+    aap-controller:
+      name: aap-controller
+      namespace: aap
+      project: base-cluster-config
+      path: charts/hub/aap/controller
+
   imperative:
     # NOTE: We *must* use lists and not hashes. As hashes lose ordering once parsed by helm
     # The default schedule is every 10 minutes: imperative.schedule

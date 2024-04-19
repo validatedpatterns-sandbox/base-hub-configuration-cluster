@@ -1,0 +1,6 @@
+apiVersion: v2
+description: A Helm chart to configure Advanced Cluster Security Central for OpenShift
+keywords:
+- pattern
+name: acs-central
+version: 0.0.1
